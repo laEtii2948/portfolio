@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prédiction de la production énergétique</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    h1, h3 {
+      color: #343a40;
+    }
+    .card {
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    }
+    .section-title {
+      border-left: 5px solid #0d6efd;
+      padding-left: 10px;
+      margin-bottom: 1rem;
+    }
+    .list-icon li::before {
+      content: "✔️ ";
+      color: #0d6efd;
+    }
+    img {
+      border: 1px solid #dee2e6;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar simple -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-5">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="acceuil.html">Mes projets</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Titre du projet -->
+  <div class="mb-5 text-center">
+    <h1 class="display-4 fw-bold">Prédiction de la production énergétique</h1>
+    <p class="text-muted fst-italic">Projet réalisé seule – Application streamlit</p>
+  </div>
+
+  <!-- Introduction / Contexte -->
+  <section class="mb-5">
+    <h3 class="section-title">Introduction</h3>
+    <p class="lead">
+        Projet réalisé dans le cadre de mon cours de programmation en python. L’objectif de ce projet était de développer un modèle de machine learning capable de prédire la puissance électrique en courant continu produite par des panneaux photovoltaïques, à partir de données météorologiques et de mesures environnementales, afin d’anticiper la production solaire à court terme.
+    </p>
+  </section>
+
+<!-- Fonctionnalités du projet Streamlit -->
+<!-- Étapes du projet -->
+<section class="mb-5">
+    <h3 class="section-title">Étapes du projet</h3>
+    <div class="accordion" id="solarProjectSteps">
+  
+      <!-- Exploration des données -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingExploration">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExploration" aria-expanded="true" aria-controls="collapseExploration">
+            Exploration des données
+          </button>
+        </h2>
+        <div id="collapseExploration" class="accordion-collapse collapse show" aria-labelledby="headingExploration" data-bs-parent="#solarProjectSteps">
+          <div class="accordion-body">
+            <p>Analyse initiale du jeu de données pour comprendre sa structure, le type de variables disponibles et détecter les éventuelles valeurs manquantes ou aberrantes. Visualisation de la distribution des variables principales (température, irradiation, puissance produite, etc.).</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Préparation des données -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingPreparation">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePreparation" aria-expanded="false" aria-controls="collapsePreparation">
+            Préparation des données
+          </button>
+        </h2>
+        <div id="collapsePreparation" class="accordion-collapse collapse" aria-labelledby="headingPreparation" data-bs-parent="#solarProjectSteps">
+          <div class="accordion-body">
+            <p>Nettoyage et transformation du jeu de données : gestion des valeurs manquantes, conversion des formats de date, création de nouvelles variables temporelles (heure, jour, mois) et normalisation des données pour la modélisation.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Étude de corrélation et importance des variables -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingCorrelation">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCorrelation" aria-expanded="false" aria-controls="collapseCorrelation">
+            Étude de corrélation et importance des variables
+          </button>
+        </h2>
+        <div id="collapseCorrelation" class="accordion-collapse collapse" aria-labelledby="headingCorrelation" data-bs-parent="#solarProjectSteps">
+          <div class="accordion-body">
+            <p>Analyse des corrélations entre les variables météorologiques et la puissance produite (DC_POWER). Identification des variables les plus influentes, notamment l’irradiation, la température et la vitesse du vent.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Modélisation -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingModelisation">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseModelisation" aria-expanded="false" aria-controls="collapseModelisation">
+            Modélisation
+          </button>
+        </h2>
+        <div id="collapseModelisation" class="accordion-collapse collapse" aria-labelledby="headingModelisation" data-bs-parent="#solarProjectSteps">
+          <div class="accordion-body">
+            <p>Construction et comparaison de plusieurs modèles de régression (régression linéaire, Random Forest, etc.) pour prédire la puissance en courant continu. Séparation du jeu de données en ensembles d’entraînement et de test pour évaluer les performances.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Visualisation des résultats -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingVisualisation">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVisualisation" aria-expanded="false" aria-controls="collapseVisualisation">
+            Visualisation des résultats
+          </button>
+        </h2>
+        <div id="collapseVisualisation" class="accordion-collapse collapse" aria-labelledby="headingVisualisation" data-bs-parent="#solarProjectSteps">
+          <div class="accordion-body">
+            <p>Affichage des prédictions et comparaison avec les valeurs réelles à l’aide de graphiques (courbes temporelles, scatter plots). Visualisation des erreurs de prédiction pour évaluer la précision du modèle.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Analyse des résidus -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingResidus">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseResidus" aria-expanded="false" aria-controls="collapseResidus">
+            Analyse des résidus
+          </button>
+        </h2>
+        <div id="collapseResidus" class="accordion-collapse collapse" aria-labelledby="headingResidus" data-bs-parent="#solarProjectSteps">
+          <div class="accordion-body">
+            <p>Étude des résidus pour vérifier la qualité du modèle et identifier les biais éventuels. Observation de la dispersion des erreurs selon les conditions météo ou les heures de la journée afin d’améliorer la précision future du modèle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  <!-- Aspects techniques -->
+  <section class="mb-5">
+    <h3 class="section-title">Aspects techniques</h3>
+    <div class="card p-4">
+      <ul class="list-icon">
+        <li>Langage utilisé : python </li>
+        <li>Manipulation de données avec la librairie Pandas</li>
+        <li>Visualisation de données avec les librairies Matplotlib et Seaborn</li>
+        <li>Utilisation de la librairie Scikit-learn pour la modélisation et l'évaluation des performances</li>
+        <li>Evaluation des performances des modèles avec RMSE et du R²</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <h3 class="section-title">Démonstration</h3>
+    <p>Quelques captures d’écran pour illustrer le fonctionnement :</p>
+    <div class="mb-4 text-end">
+        <a href="https://projetpython.streamlit.app/" class="btn btn-primary" target="_blank">Tester directement l'application</a>
+      </div>
+  
+    <div id="demoCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#demoCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+  
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/image_projet3_1.png" class="d-block w-100 rounded" alt="">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/image_projet3_2.png" class="d-block w-100 rounded" alt="">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/image_projet3_3.png" class="d-block w-100 rounded" alt="">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/image_projet3_4.png" class="d-block w-100 rounded" alt="">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="images/image_projet3_5.png" class="d-block w-100 rounded" alt="">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+      </div>
+  
+      <button class="carousel-control-prev" type="button" data-bs-target="#demoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Difficultés rencontrées -->
+  <section class="mb-5">
+    <h3 class="section-title">Difficultés rencontrées</h3>
+    <div class="card p-4">
+      <p>L’une des principales difficultés de ce projet a été la préparation et la compréhension des données issues des capteurs photovoltaïques. Les variables présentaient parfois des valeurs manquantes, incohérentes ou bruitées, ce qui a nécessité un travail minutieux de nettoyage et de transformation. <br /> <br />
+
+        Un autre défi a été la sélection des variables les plus pertinentes pour la prédiction du courant continu. Il a fallu analyser finement les corrélations et expérimenter plusieurs approches pour éviter la surinterprétation ou la redondance entre variables. <br /> <br />
+        
+        Enfin, la modélisation a demandé plusieurs ajustements, notamment pour trouver un compromis entre précision et généralisation. Le choix des hyperparamètres et l’évaluation des performances avec différents modèles (régression linéaire, random forest) ont représenté une étape clé mais exigeante du projet.</p>
+    </div>
+  </section>
+
+  <!-- Conclusion / Retours -->
+  <section class="mb-5">
+    <h3 class="section-title">Conclusion et améliorations futures</h3>
+    <p>
+        Ce projet m’a permis d’approfondir mes compétences en machine learning, en préparation de données réelles et en analyse exploratoire. Il m’a surtout permis de comprendre comment exploiter des données météorologiques pour prédire la production d’énergie solaire à court terme, en mettant en œuvre différents modèles de régression.
+    </p>
+  </section>
+
+  <!-- Boutons de navigation -->
+  <div class="mb-5 text-end">
+    <a href="accueil.html" class="btn btn-secondary me-2">Retour aux projets</a>
+    <a href="https://github.com/laEtii2948/projet_python" class="btn btn-primary">Voir le code / GitHub</a>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
